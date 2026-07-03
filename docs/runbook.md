@@ -15,6 +15,20 @@ Document:
 - Service startup commands
 - Test commands
 
+Initial local infrastructure command:
+
+```bash
+pnpm dev:infra
+```
+
+This starts PostgreSQL, Keycloak, Kafka, and Redis through Docker Compose.
+
+Stop local infrastructure with:
+
+```bash
+pnpm stop:infra
+```
+
 ## Deployment
 
 Document:

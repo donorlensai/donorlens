@@ -1,0 +1,13 @@
+{
+  "name": "@donorlens/campaigns-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"No campaigns service tests configured yet\"",
+    "lint": "echo \"No campaigns service lint command configured yet\"",
+    "format": "echo \"No campaigns service format command configured yet\""
+  }
+}

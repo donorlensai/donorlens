@@ -1,0 +1,13 @@
+{
+  "name": "@donorlens/notifications-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"No notifications service tests configured yet\"",
+    "lint": "echo \"No notifications service lint command configured yet\"",
+    "format": "echo \"No notifications service format command configured yet\""
+  }
+}

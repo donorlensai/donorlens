@@ -1,0 +1,13 @@
+{
+  "name": "@donorlens/donors-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "echo \"No donors service tests configured yet\"",
+    "lint": "echo \"No donors service lint command configured yet\"",
+    "format": "echo \"No donors service format command configured yet\""
+  }
+}
