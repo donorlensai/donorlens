@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "cd ../.. && ./node_modules/.bin/tsc -p services/donors/tsconfig.json --noEmit --diagnostics",
+    "typecheck": "cd ../.. && ./node_modules/.bin/tsc -p services/donors/tsconfig.json --noEmit --diagnostics",
     "test": "echo \"No donors service tests configured yet\"",
     "lint": "echo \"No donors service lint command configured yet\"",
     "format": "echo \"No donors service format command configured yet\""

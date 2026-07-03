@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "echo \"No identity service tests configured yet\"",
+    "build": "cd ../.. && ./node_modules/.bin/tsc -p services/identity/tsconfig.json --noEmit --diagnostics",
+    "typecheck": "cd ../.. && ./node_modules/.bin/tsc -p services/identity/tsconfig.json --noEmit --diagnostics",
+    "test": "node --test tests/*.test.ts",
     "lint": "echo \"No identity service lint command configured yet\"",
     "format": "echo \"No identity service format command configured yet\""
   }

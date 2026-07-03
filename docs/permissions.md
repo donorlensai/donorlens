@@ -21,7 +21,16 @@ Maintain the permission matrix here as roles and actions become concrete.
 
 | Permission | Owning service | Roles | Audit required | Notes |
 | --- | --- | --- | --- | --- |
-| TBD | TBD | TBD | TBD | Add concrete permissions as features are implemented. |
+| `organization.manage` | identity | `org_admin` | Yes | Manage organization settings. |
+| `member.invite` | identity | `org_admin` | Yes | Invite members to an organization. |
+| `member.revoke` | identity | `org_admin` | Yes | Revoke organization membership. |
+| `donor.read` | donors | `org_admin`, `fundraiser`, `analyst` | No | Read donor profile data. |
+| `donor.write` | donors | `org_admin`, `fundraiser` | Yes | Create or update donor profile data. |
+| `giving.read` | giving | `org_admin`, `fundraiser`, `analyst` | No | Read giving activity. |
+| `giving.write` | giving | `org_admin`, `fundraiser` | Yes | Record or update giving activity. |
+| `campaign.read` | campaigns | `org_admin`, `fundraiser`, `analyst` | No | Read campaign data. |
+| `campaign.write` | campaigns | `org_admin`, `fundraiser` | Yes | Manage campaigns. |
+| `analytics.read` | analytics | `org_admin`, `analyst` | No | Read dashboards and reports. |
 
 ## Rules
 

@@ -4,15 +4,11 @@
   "private": true,
   "type": "module",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "cd ../.. && ./node_modules/.bin/tsc -p packages/contracts/tsconfig.json --noEmit --diagnostics",
+    "typecheck": "cd ../.. && ./node_modules/.bin/tsc -p packages/contracts/tsconfig.json --noEmit --diagnostics",
     "test": "echo \"No contract tests configured yet\"",
     "lint": "echo \"No lint command configured yet\"",
     "format": "echo \"No format command configured yet\""
-  },
-  "devDependencies": {
-    "typescript": "^5.7.3"
   }
 }

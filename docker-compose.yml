@@ -34,7 +34,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.0
     container_name: donorlens-keycloak
-    command: ["start-dev"]
+    command: ["start-dev", "--import-realm"]
     depends_on:
       keycloak-db:
         condition: service_healthy
@@ -48,6 +48,8 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: admin
     ports:
       - "8080:8080"
+    volumes:
+      - ./infra/keycloak/donorlens-realm.json:/opt/keycloak/data/import/donorlens-realm.json:ro
 
   kafka:
     image: bitnami/kafka:3.8

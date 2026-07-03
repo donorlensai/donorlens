@@ -10,6 +10,7 @@ Use past-tense names:
 - `PaymentSettled`
 - `ReceiptIssued`
 - `DonorMerged`
+- `OrganizationMemberInvited`
 
 Avoid command-like event names such as `SendReceipt`.
 
@@ -34,3 +35,12 @@ Consumers must be idempotent. Do not assume exactly-once delivery.
 Event payloads must be versioned. Breaking changes require a migration plan.
 
 Events should not expose another service's internal persistence model.
+
+## Initial Identity Events
+
+| Event | Publisher | Purpose |
+| --- | --- | --- |
+| `OrganizationCreated` | identity service | A new organization was created. |
+| `OrganizationMemberInvited` | identity service | A member was invited to an organization with a role. |
+| `MembershipGranted` | identity service | A user gained organization membership. |
+| `MembershipRevoked` | identity service | A user lost organization membership. |

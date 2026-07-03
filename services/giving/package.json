@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "cd ../.. && ./node_modules/.bin/tsc -p services/giving/tsconfig.json --noEmit --diagnostics",
+    "typecheck": "cd ../.. && ./node_modules/.bin/tsc -p services/giving/tsconfig.json --noEmit --diagnostics",
     "test": "echo \"No giving service tests configured yet\"",
     "lint": "echo \"No giving service lint command configured yet\"",
     "format": "echo \"No giving service format command configured yet\""

@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "cd ../.. && ./node_modules/.bin/tsc -p services/files/tsconfig.json --noEmit --diagnostics",
+    "typecheck": "cd ../.. && ./node_modules/.bin/tsc -p services/files/tsconfig.json --noEmit --diagnostics",
     "test": "echo \"No files service tests configured yet\"",
     "lint": "echo \"No files service lint command configured yet\"",
     "format": "echo \"No files service format command configured yet\""

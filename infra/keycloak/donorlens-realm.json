@@ -1,0 +1,56 @@
+{
+  "realm": "donorlens",
+  "enabled": true,
+  "displayName": "Donorlens",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "roles": {
+    "realm": [
+      { "name": "platform_admin", "description": "Full platform administration." },
+      { "name": "org_admin", "description": "Organization administration." },
+      { "name": "fundraiser", "description": "Fundraising operations." },
+      { "name": "analyst", "description": "Read-only analytics access." }
+    ]
+  },
+  "clients": [
+    {
+      "clientId": "donorlens-web",
+      "name": "Donorlens Web",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/*"],
+      "webOrigins": ["http://localhost:3000"]
+    },
+    {
+      "clientId": "api-gateway",
+      "name": "Donorlens API Gateway",
+      "enabled": true,
+      "publicClient": false,
+      "serviceAccountsEnabled": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false
+    }
+  ],
+  "users": [
+    {
+      "username": "platform.admin@donorlens.local",
+      "email": "platform.admin@donorlens.local",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Platform",
+      "lastName": "Admin",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "LocalPass123!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["platform_admin"]
+    }
+  ]
+}
