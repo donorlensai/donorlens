@@ -14,6 +14,62 @@
       { "name": "analyst", "description": "Read-only analytics access." }
     ]
   },
+  "clientScopes": [
+    {
+      "name": "donorlens-api-audience",
+      "description": "Adds the API gateway audience to browser access tokens.",
+      "protocol": "openid-connect",
+      "protocolMappers": [
+        {
+          "name": "api-gateway audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "api-gateway",
+            "id.token.claim": "false",
+            "access.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
+      "name": "donorlens-organization-claims",
+      "description": "Local development org context claims for Donorlens tokens.",
+      "protocol": "openid-connect",
+      "protocolMappers": [
+        {
+          "name": "organization id",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "organization_id",
+            "claim.name": "organization_id",
+            "jsonType.label": "String",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        },
+        {
+          "name": "permissions",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-attribute-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "permissions",
+            "claim.name": "permissions",
+            "jsonType.label": "String",
+            "multivalued": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
   "clients": [
     {
       "clientId": "donorlens-web",
@@ -21,9 +77,18 @@
       "enabled": true,
       "publicClient": true,
       "standardFlowEnabled": true,
-      "directAccessGrantsEnabled": false,
+      "directAccessGrantsEnabled": true,
       "redirectUris": ["http://localhost:3000/*"],
-      "webOrigins": ["http://localhost:3000"]
+      "webOrigins": ["http://localhost:3000"],
+      "defaultClientScopes": [
+        "web-origins",
+        "acr",
+        "profile",
+        "roles",
+        "email",
+        "donorlens-api-audience",
+        "donorlens-organization-claims"
+      ]
     },
     {
       "clientId": "api-gateway",
@@ -43,6 +108,21 @@
       "emailVerified": true,
       "firstName": "Platform",
       "lastName": "Admin",
+      "attributes": {
+        "organization_id": ["org_local_demo"],
+        "permissions": [
+          "organization.manage",
+          "member.invite",
+          "member.revoke",
+          "donor.read",
+          "donor.write",
+          "giving.read",
+          "giving.write",
+          "campaign.read",
+          "campaign.write",
+          "analytics.read"
+        ]
+      },
       "credentials": [
         {
           "type": "password",
@@ -50,7 +130,7 @@
           "temporary": false
         }
       ],
-      "realmRoles": ["platform_admin"]
+      "realmRoles": ["platform_admin", "org_admin"]
     }
   ]
 }

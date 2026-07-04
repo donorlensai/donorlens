@@ -23,3 +23,9 @@ The API gateway is the edge entry point for client traffic into backend services
 ## Boundaries
 
 The gateway must not own domain business logic. Domain authorization and business decisions belong in the owning service.
+
+## Local Auth Configuration
+
+- `KEYCLOAK_ISSUER`: defaults to `http://localhost:8080/realms/donorlens`
+- `KEYCLOAK_JWKS_URI`: defaults to `${KEYCLOAK_ISSUER}/protocol/openid-connect/certs`
+- `KEYCLOAK_AUDIENCE`: set to `api-gateway` to require an access-token audience

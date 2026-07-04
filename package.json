@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm typecheck",
     "typecheck": "./node_modules/.bin/tsc -p apps/api-gateway/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p packages/contracts/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/analytics/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/campaigns/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/donors/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/files/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/giving/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/identity/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/notifications/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/payments/tsconfig.json --noEmit --diagnostics && ./node_modules/.bin/tsc -p services/receipts/tsconfig.json --noEmit --diagnostics",
-    "test": "node --test apps/api-gateway/tests/*.test.ts services/identity/tests/*.test.ts",
+    "test": "node --test apps/api-gateway/tests/*.test.ts infra/keycloak/tests/*.test.mjs services/identity/tests/*.test.ts",
     "lint": "echo \"No lint command configured yet\"",
     "format": "echo \"No format command configured yet\"",
     "dev:infra": "docker compose up -d postgres keycloak-db keycloak kafka redis",
