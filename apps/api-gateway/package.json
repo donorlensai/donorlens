@@ -1,0 +1,18 @@
+{
+  "name": "@donorlens/api-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/main.ts",
+    "start": "node src/main.ts",
+    "build": "cd ../.. && ./node_modules/.bin/tsc -p apps/api-gateway/tsconfig.json --noEmit --diagnostics",
+    "typecheck": "cd ../.. && ./node_modules/.bin/tsc -p apps/api-gateway/tsconfig.json --noEmit --diagnostics",
+    "test": "node --test tests/*.test.ts",
+    "lint": "echo \"No api-gateway lint command configured yet\"",
+    "format": "echo \"No api-gateway format command configured yet\""
+  },
+  "dependencies": {
+    "@donorlens/contracts": "workspace:*"
+  }
+}

@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "main": "dist/index.js",
+  "types": "src/index.ts",
   "scripts": {
     "build": "cd ../.. && ./node_modules/.bin/tsc -p packages/contracts/tsconfig.json --noEmit --diagnostics",
     "typecheck": "cd ../.. && ./node_modules/.bin/tsc -p packages/contracts/tsconfig.json --noEmit --diagnostics",

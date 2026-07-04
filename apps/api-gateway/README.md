@@ -5,7 +5,7 @@ The API gateway is the edge entry point for client traffic into backend services
 ## Ownership
 
 - Area: edge API
-- Stack: NestJS with Fastify where appropriate
+- Stack: Node.js HTTP now; NestJS with Fastify remains the target framework when route complexity justifies it
 - Canonical rules: `docs/api-gateway.md`
 
 ## Responsibilities
@@ -16,6 +16,9 @@ The API gateway is the edge entry point for client traffic into backend services
 - Request logging
 - API versioning
 - Correlation ID propagation
+- `GET /health`
+- `GET /ready`
+- `GET /v1/me` protected by Keycloak JWT verification
 
 ## Boundaries
 
